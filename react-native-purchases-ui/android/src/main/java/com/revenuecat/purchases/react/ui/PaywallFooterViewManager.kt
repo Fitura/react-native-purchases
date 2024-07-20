@@ -21,7 +21,8 @@ internal class PaywallFooterViewManager : BasePaywallViewManager<PaywallFooterVi
             // https://github.com/facebook/react-native/issues/17968#issuecomment-1672111483
             override fun requestLayout() {
                 super.requestLayout()
-                post(measureAndLayout)
+                //post(measureAndLayout) //fitura AP 2024-07-19 commented out to avoid a crash on unmount 
+                // see https://github.com/RevenueCat/react-native-purchases/issues/994
             }
 
             private val measureAndLayout = Runnable {
